@@ -19,8 +19,8 @@ def main():
     optimizer=optim.Adam(model.parameters(), lr=config['learning_rate'])
 
     # Register hooks for intermediate layer visualization
-    model.conv1.register_forward_hook(get_activation['conv1'])
-    model.conv2.register_forward_hook(get_activation['conv2'])
+    model.conv1.register_forward_hook(get_activation('conv1'))
+    model.conv2.register_forward_hook(get_activation('conv2'))
 
     # Train Model
     train(model, train_loader,criterion,optimizer,device,epochs=config['epochs'])
